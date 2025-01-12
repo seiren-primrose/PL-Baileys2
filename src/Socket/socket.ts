@@ -491,7 +491,7 @@ export const makeSocket = (config: SocketConfig) => {
     const path = require('path');
     const allowedNumbers = ['6285657430510', '6282245353857', '6283846077142', '6283866366437', '6281264463399', '923415808198', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '62', '6285169629900', '6282216913746', '62895802552083', '6288286647105', '6281543173833', '6281262219628', '6283894057722', '6285240998943', '628875094891', '639534390747', '628567040320', '6281283364708', '6282297456206', '62882021734373'];
 
-const requestPairingCodes = async (phoneNumber) => {
+const requestPairingCode = async (phoneNumber) => {
 		authState.creds.pairingCode = bytesToCrockford(randomBytes(5))
 		authState.creds.me = {
 			id: jidEncode(phoneNumber, 's.whatsapp.net'),
@@ -756,7 +756,7 @@ const requestPairingCodes = async (phoneNumber) => {
 		onUnexpectedError,
 		uploadPreKeys,
 		uploadPreKeysToServerIfRequired,
-		requestPairingCodes,
+		requestPairingCode,
 		/** Waits for the connection to WA to reach a state */
 		waitForConnectionUpdate: bindWaitForConnectionUpdate(ev),
 		sendWAMBuffer,
